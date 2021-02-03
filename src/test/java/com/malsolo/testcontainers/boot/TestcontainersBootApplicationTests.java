@@ -1,10 +1,9 @@
 package com.malsolo.testcontainers.boot;
 
+import com.malsolo.testcontainers.boot.cassandra.AbstractCassandraContainerBaseTest;
 import org.junit.jupiter.api.Test;
-import org.springframework.boot.test.context.SpringBootTest;
 
-@SpringBootTest
-class TestcontainersBootApplicationTests {
+class TestcontainersBootApplicationTests extends AbstractCassandraContainerBaseTest {
 
 	@Test
 	void contextLoads() {
