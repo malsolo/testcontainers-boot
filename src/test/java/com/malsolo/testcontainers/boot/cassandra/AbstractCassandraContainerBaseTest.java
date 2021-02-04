@@ -1,7 +1,7 @@
 package com.malsolo.testcontainers.boot.cassandra;
 
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.boot.test.autoconfigure.data.cassandra.DataCassandraTest;
 import org.springframework.test.context.DynamicPropertyRegistry;
 import org.springframework.test.context.DynamicPropertySource;
 import org.testcontainers.containers.GenericContainer;
@@ -14,7 +14,7 @@ import org.testcontainers.utility.DockerImageName;
  * See https://docs.spring.io/spring-boot/docs/current/reference/htmlsingle/#howto-testcontainers.
  */
 @Slf4j
-@SpringBootTest
+@DataCassandraTest
 @SuppressWarnings("rawtypes")
 public class AbstractCassandraContainerBaseTest {
 
