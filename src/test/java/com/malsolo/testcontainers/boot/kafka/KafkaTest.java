@@ -43,6 +43,7 @@ public class KafkaTest {
         var bootstrapServers = kafka.getBootstrapServers().substring(index);
         log.warn("\n\nspring.kafka.bootstrap-servers={}\n\n", bootstrapServers);
         registry.add("spring.kafka.bootstrap-servers", () -> bootstrapServers);
+        registry.add("spring.kafka.consumer.auto-offset-reset", () -> "earliest");
     }
 
     @Test

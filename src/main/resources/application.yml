@@ -20,4 +20,4 @@ kafka:
   consumer:
     auto-start: true
     topic: testcontainers-boot-test-topic
-    group-id: Kafkassandra-group
+    group-id: Testcontainers-group
