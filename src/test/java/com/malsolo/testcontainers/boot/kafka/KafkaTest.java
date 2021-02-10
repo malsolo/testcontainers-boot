@@ -1,9 +1,5 @@
 package com.malsolo.testcontainers.boot.kafka;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNotNull;
-
-import java.util.concurrent.TimeUnit;
 import lombok.extern.slf4j.Slf4j;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +14,11 @@ import org.testcontainers.containers.KafkaContainer;
 import org.testcontainers.junit.jupiter.Container;
 import org.testcontainers.junit.jupiter.Testcontainers;
 import org.testcontainers.utility.DockerImageName;
+
+import java.util.concurrent.TimeUnit;
+
+import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
 @SpringBootTest
 @EnableAutoConfiguration(exclude={CassandraReactiveDataAutoConfiguration.class,
@@ -54,7 +55,6 @@ public class KafkaTest {
 
         //When
         producer.sendMessage(key, message);
-        Thread.sleep(1000);
 
         //Then
         var consumedMessage = consumer.getQueue().poll(5, TimeUnit.SECONDS);
